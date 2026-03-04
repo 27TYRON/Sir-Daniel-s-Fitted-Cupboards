@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Test Runner</title>
+  <link rel="stylesheet" href="https://unpkg.com/mocha/mocha.css">
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .test-area { margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Mocha Test Runner</h1>
+
+  <!-- Minimal DOM needed by scripts -->
+  <div class="test-area">
+    <h2>Admin/Product form</h2>
+    <input id="name" placeholder="Product Name">
+    <input id="price" type="number" placeholder="Price">
+    <input id="image" placeholder="Image URL">
+    <select id="category">
+      <option>Built-in Appliances</option>
+    </select>
+    <div id="product-message" class="message" aria-live="polite"></div>
+    <button id="add-product-btn" disabled>Add Product</button>
+    <div id="product-list"></div>
+  </div>
+
+  <div class="test-area">
+    <h2>Cart</h2>
+    <div id="cart-items"></div>
+  </div>
+
+  <div id="mocha"></div>
+
+  <script src="https://unpkg.com/mocha/mocha.js"></script>
+  <script>mocha.setup('bdd');</script>
+  <script src="https://unpkg.com/chai/chai.js"></script>
+
+  <!-- app scripts -->
+  <script src="../js/products.js"></script>
+  <script src="../js/cart.js"></script>
+
+  <!-- tests -->
+  <script src="tests.js"></script>
+  <script>
+    window.onload = function() {
+      mocha.run();
+    };
+  </script>
+</body>
+</html>

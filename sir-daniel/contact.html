@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Sir Daniel's Fitted Cupboards</title>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="nav-container">
+        <div class="logo">
+            <a href="index.html">Sir Daniel’s Fitted Cupboards</a>
+        </div>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html" class="active">Contact</a>
+            <a href="about.html">About</a>
+            <a href="cart.html">Cart</a>
+        </nav>
+    </div>
+</header>
+
+<section class="contact-section">
+    <div class="contact-card">
+        <h2>Contact & Book Appointment</h2>
+        <p class="subtitle">Fill in the form below to contact us or book an appointment</p>
+
+        <form>
+
+            <input type="text" id="name" placeholder="Full Name" required>
+
+            <input type="email" id="email" placeholder="Email Address" required>
+
+            <input type="text" id="subject" placeholder="Subject">
+
+            <textarea id="message" rows="4" placeholder="Your Message"></textarea>
+
+            <h3 class="booking-title">Book an Appointment</h3>
+
+            <input type="date" id="date">
+
+            <input type="time" id="time">
+
+            <button type="button" onclick="sendMessage()">Submit via WhatsApp</button>
+
+        </form>
+
+        <div class="contact-info">
+            <h4>Our Address</h4>
+            <p>123 Business Street<br>
+            Cape Town, South Africa</p>
+
+            <p>Email: info@mybrand.com</p>
+            <p>Phone: +27 00 000 0000</p>
+        </div>
+
+    </div>
+</section>
+
+<footer class="site-footer">
+  <p>© 2026 Sir Daniel’s Fitted Cupboards Solutions</p>
+  <p>Crafted for excellence. Built to last.</p>
+</footer>
+<script src="../js/contact.js"></script>
+</body>
+</html>
