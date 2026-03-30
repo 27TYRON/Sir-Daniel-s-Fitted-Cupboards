@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Sir Daniel's Fitted Cupboards</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">Sir Daniel's <span>Fitted Cupboards</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="cart.html" class="cart-pill">Quote Cart <span id="cart-count">0</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Let's talk</span>
+      <h1>Get a professional quote for your cupboards or joinery project.</h1>
+      <p>Send your requirements, preferred date, and installation details. We'll respond quickly with the next steps.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container contact-layout">
+      <div class="contact-card">
+        <h2>Request a quote</h2>
+        <p class="lead">Use the form below and we'll prepare your WhatsApp enquiry with all the important details.</p>
+
+        <form id="contact-form" class="form-grid">
+          <div class="form-group">
+            <label for="name">Full name</label>
+            <input type="text" id="name" placeholder="Your name">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" id="email" placeholder="you@example.com">
+          </div>
+
+          <div class="form-group full">
+            <label for="subject">Project type</label>
+            <input type="text" id="subject" placeholder="Wardrobes, kitchen units, TV wall, shelving...">
+          </div>
+
+          <div class="form-group full">
+            <label for="message">Project notes</label>
+            <textarea id="message" placeholder="Tell us about the room size, finish you want, and any special details."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="date">Preferred date</label>
+            <input type="date" id="date">
+          </div>
+
+          <div class="form-group">
+            <label for="time">Preferred time</label>
+            <input type="time" id="time">
+          </div>
+
+          <div class="form-group full">
+            <button type="button" class="btn btn-primary" onclick="sendMessage()">Send via WhatsApp</button>
+            <p id="contact-response" class="message" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+
+      <aside class="contact-side-card">
+        <h3>Direct contact</h3>
+        <p>Prefer to chat instantly? Use any of the options below and we'll assist you with pricing, measurements, and bookings.</p>
+
+        <div class="quick-links">
+          <a class="contact-link" href="tel:+27813421958">📞 +27 81 342 1958</a>
+          <a class="contact-link" href="mailto:Danielndawana93@gmail.com">✉️ Danielndawana932@gmail.com</a>
+          <a class="contact-link" href="https://wa.me/27813421958" target="_blank" rel="noopener noreferrer">💬 Open WhatsApp</a>
+        </div>
+
+        <div class="quick-links">
+          <div class="value-card">
+            <h3>Business hours</h3>
+            <p>Mon - Sat: 8:00 to 17:30</p>
+          </div>
+          <div class="value-card">
+            <h3>Service area</h3>
+            <p>Cape Town and surrounding areas for fitted cupboards, kitchens, vanities, ceilings, and shelving.</p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>Sir Daniel's Fitted Cupboards</strong><br>
+        <small>Crafted for excellence. Built to last.</small>
+      </div>
+      <p>© 2026 Sir Daniel's. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/contact.js"></script>
+  <script src="../js/cart.js"></script>
+</body>
+</html>

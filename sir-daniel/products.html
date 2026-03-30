@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products | Sir Daniel's Fitted Cupboards</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">Sir Daniel's <span>Fitted Cupboards</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="products.html" class="active">Products</a>
+        <a href="contact.html">Contact</a>
+        <a href="cart.html" class="cart-pill">Quote Cart <span id="cart-count">0</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Shop the collection</span>
+      <h1>Professional storage solutions ready for your next project.</h1>
+      <p>Browse our top-selling fitted cupboard packages, add them to your quote cart, and confirm your order through WhatsApp or email.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Project gallery</h2>
+        <p>All images from the folder are now displayed in one smooth horizontal row. Scroll sideways to view the full collection.</p>
+      </div>
+
+      <div id="folder-gallery" class="horizontal-gallery" aria-label="Project image gallery"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Filter by room or installation type</h2>
+        <p>Choose the style that matches your home, office, or development project, then add it to your quote cart.</p>
+      </div>
+
+      <div class="filter-bar">
+        <button class="filter-btn active" data-category="all">All</button>
+        <button class="filter-btn" data-category="wardrobes">Wardrobes</button>
+        <button class="filter-btn" data-category="kitchens">Kitchens</button>
+        <button class="filter-btn" data-category="living">Living Spaces</button>
+        <button class="filter-btn" data-category="finishes">Finishes</button>
+      </div>
+
+      <div id="product-list" class="product-grid"></div>
+
+      <div class="quote-banner">
+        <div>
+          <h3>Need a custom size or finish?</h3>
+          <p class="lead">We also create bespoke cupboards, vanities, shelving, ceilings, and shopfitting solutions.</p>
+        </div>
+        <a href="contact.html" class="btn btn-dark">Request a Custom Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>Sir Daniel's Fitted Cupboards</strong><br>
+        <small>Built for style. Designed to last.</small>
+      </div>
+      <p>© 2026 Sir Daniel's. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/products.js"></script>
+  <script src="../js/cart.js"></script>
+</body>
+</html>

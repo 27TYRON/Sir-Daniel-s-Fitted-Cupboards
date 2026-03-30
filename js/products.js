@@ -1,277 +1,363 @@
-// Organized products with categories and services
+const folderGalleryImages = [
+  'daniel.jpeg',
+  'img1.jpeg',
+  'img2.jpeg',
+  'img3.jpeg',
+  'img4.jpeg',
+  'img5.jpeg',
+  'img6.jpeg',
+  'img7.jpeg',
+  'img8.jpeg',
+  'img9.jpeg',
+  'img10.jpeg',
+  'img11.jpeg',
+  'img12.jpeg',
+  'img13.jpeg',
+  'img 14.jpeg',
+  'img15.jpeg',
+  'img 16.jpeg',
+  'img 17.jpeg',
+  'img 18.jpeg',
+  'img19.jpeg',
+  'img20.jpeg',
+  'img21.jpeg',
+  'img22.jpeg',
+  'img 23.jpeg',
+  'img 24.jpeg',
+  'img 25.jpeg',
+  'logo.jpeg'
+];
+
 const defaultProducts = [
-  // CUTTING LIST SERVICES
-  { 
-    name: 'Premium Cutting List Package', 
-    price: 500, 
-    image: 'images/img1.jpeg',
-    category: 'cutting',
-    service: 'Material Cutting & Sizing'
+  {
+    name: 'Signature Wardrobe Package',
+    price: 6800,
+    image: '../images/img8.jpeg',
+    category: 'wardrobes',
+    service: 'Bedroom storage',
+    description: 'Floor-to-ceiling wardrobe design with premium rails and a clean built-in finish.'
   },
-  { 
-    name: 'Standard Cutting Service', 
-    price: 350, 
-    image: 'images/img2.jpeg',
-    category: 'cutting',
-    service: 'Basic Material Cuts'
+  {
+    name: 'Walk-In Closet Upgrade',
+    price: 9200,
+    image: '../images/img15.jpeg',
+    category: 'wardrobes',
+    service: 'Luxury organisation',
+    description: 'Smart shelves, hanging space, and drawers built to maximise every corner.'
   },
-  { 
-    name: 'Custom Angle Cutting', 
-    price: 450, 
-    image: 'images/img3.jpeg',
-    category: 'cutting',
-    service: 'Precision Angle Cuts'
+  {
+    name: 'Executive Kitchen Unit',
+    price: 12500,
+    image: '../images/img7.jpeg',
+    category: 'kitchens',
+    service: 'Kitchen cabinetry',
+    description: 'Modern kitchen cupboards with durable finishes and elegant storage planning.'
   },
-
-  // JOINERY SERVICES
-  { 
-    name: 'Cabinet Joinery', 
-    price: 2500, 
-    image: 'images/daniel.jpeg',
-    category: 'joinery',
-    service: 'Cabinet Construction & Assembly'
+  {
+    name: 'Compact Kitchen Refresh',
+    price: 8500,
+    image: '../images/img11.jpeg',
+    category: 'kitchens',
+    service: 'Budget-friendly upgrade',
+    description: 'A polished refresh for apartments, rentals, and starter homes.'
   },
-  { 
-    name: 'Dovetail Joinery', 
-    price: 1800, 
-    image: 'images/img4.jpeg',
-    category: 'joinery',
-    service: 'Dovetail Joint Work'
+  {
+    name: 'TV Wall and Shelving Set',
+    price: 5600,
+    image: '../images/img23.jpeg',
+    category: 'living',
+    service: 'Living room feature',
+    description: 'A statement entertainment unit with practical display storage and a showroom look.'
   },
-  { 
-    name: 'Mortise & Tenon Joinery', 
-    price: 1950, 
-    image: 'images/img5.jpeg',
-    category: 'joinery',
-    service: 'Mortise & Tenon Joints'
+  {
+    name: 'Floating Vanity Cabinet',
+    price: 4300,
+    image: '../images/img10.jpeg',
+    category: 'living',
+    service: 'Bathroom storage',
+    description: 'Sleek vanity unit designed to keep bathrooms modern, neat, and functional.'
   },
-  { 
-    name: 'Box Joinery', 
-    price: 1700, 
-    image: 'images/img6.jpeg',
-    category: 'joinery',
-    service: 'Box Joint Construction'
+  {
+    name: 'Ceiling and Finish Package',
+    price: 6100,
+    image: '../images/img12.jpeg',
+    category: 'finishes',
+    service: 'Interior finishing',
+    description: 'Decorative ceiling panels and finish work that give spaces a premium final touch.'
   },
-
-  // INSTALLATIONS SERVICES
-  { 
-    name: 'Kitchen Cabinet Installation', 
-    price: 2100, 
-    image: 'images/img7.jpeg',
-    category: 'installations',
-    service: 'Professional Cabinet Installation'
-  },
-  { 
-    name: 'Wardrobe Installation', 
-    price: 2200, 
-    image: 'images/img8.jpeg',
-    category: 'installations',
-    service: 'Fitted Wardrobe Installation'
-  },
-  { 
-    name: 'Built-in Shelving Installation', 
-    price: 1850, 
-    image: 'images/img9.jpeg',
-    category: 'installations',
-    service: 'Custom Shelving Installation'
-  },
-  { 
-    name: 'Bathroom Vanity Installation', 
-    price: 2050, 
-    image: 'images/img10.jpeg',
-    category: 'installations',
-    service: 'Bathroom Installation Services'
-  },
-
-  // CEILINGS SERVICES
-  { 
-    name: 'Suspended Ceiling Installation', 
-    price: 2300, 
-    image: 'images/img11.jpeg',
-    category: 'ceilings',
-    service: 'Suspended Ceiling Systems'
-  },
-  { 
-    name: 'Wooden Ceiling Panels', 
-    price: 2150, 
-    image: 'images/img12.jpeg',
-    category: 'ceilings',
-    service: 'Wooden Ceiling Finishes'
-  },
-  { 
-    name: 'Ceiling Repairs & Finishing', 
-    price: 1900, 
-    image: 'images/img13.jpeg',
-    category: 'ceilings',
-    service: 'Ceiling Repair Services'
-  },
-  { 
-    name: 'Decorative Ceiling Design', 
-    price: 2250, 
-    image: 'images/img14.jpeg',
-    category: 'ceilings',
-    service: 'Custom Ceiling Design'
-  },
-
-  // LAMINATED FLOORING SERVICES
-  { 
-    name: 'Laminate Installation - Small Area', 
-    price: 2000, 
-    image: 'images/img15.jpeg',
-    category: 'laminated',
-    service: 'Small Area Flooring Installation'
-  },
-  { 
-    name: 'Laminate Installation - Large Area', 
-    price: 2080, 
-    image: 'images/img16.jpeg',
-    category: 'laminated',
-    service: 'Full Room Flooring Installation'
-  },
-  { 
-    name: 'Laminate with Underlay Installation', 
-    price: 2120, 
-    image: 'images/img17.jpeg',
-    category: 'laminated',
-    service: 'Premium Flooring with Underlay'
-  },
-  { 
-    name: 'Flooring Edge Finishing', 
-    price: 1880, 
-    image: 'images/img18.jpeg',
-    category: 'laminated',
-    service: 'Finishing & Edging Work'
-  },
-
-  // TILING SERVICES
-  { 
-    name: 'Wall Tiling Service', 
-    price: 2100, 
-    image: 'images/img19.jpeg',
-    category: 'tiling',
-    service: 'Wall Tile Installation'
-  },
-  { 
-    name: 'Floor Tiling Installation', 
-    price: 2200, 
-    image: 'images/img20.jpeg',
-    category: 'tiling',
-    service: 'Floor Tile Installation'
-  },
-  { 
-    name: 'Bathroom Tiling Package', 
-    price: 2050, 
-    image: 'images/img21.jpeg',
-    category: 'tiling',
-    service: 'Complete Bathroom Tiling'
-  },
-  { 
-    name: 'Specialty Tile Work', 
-    price: 2150, 
-    image: 'images/img22.jpeg',
-    category: 'tiling',
-    service: 'Custom Tile Designs'
-  },
-  { 
-    name: 'Tile Grout & Finishing', 
-    price: 1950, 
-    image: 'images/img23.jpeg',
-    category: 'tiling',
-    service: 'Grout & Finishing Services'
+  {
+    name: 'Custom Shelving Solution',
+    price: 3900,
+    image: '../images/img9.jpeg',
+    category: 'finishes',
+    service: 'Display shelving',
+    description: 'Built-in shelving that adds organised storage to offices, lounges, and retail spaces.'
   }
 ];
 
-let products = JSON.parse(localStorage.getItem("products")) || defaultProducts;
 let currentFilter = 'all';
+let products = readProductsFromStorage();
+window.products = Array.isArray(window.products) ? window.products : products;
 
-if (products.length === 0) {
-  localStorage.setItem('products', JSON.stringify(defaultProducts));
-  products = defaultProducts;
+function readProductsFromStorage() {
+  try {
+    const stored = JSON.parse(localStorage.getItem('products') || 'null');
+    return Array.isArray(stored) ? stored : defaultProducts.map(product => ({ ...product }));
+  } catch (error) {
+    return defaultProducts.map(product => ({ ...product }));
+  }
+}
+
+function syncProducts() {
+  if (Array.isArray(window.products)) {
+    products = window.products;
+  } else {
+    window.products = products;
+  }
+
+  return products;
+}
+
+function persistProducts() {
+  syncProducts();
+  localStorage.setItem('products', JSON.stringify(products));
+}
+
+function formatCurrency(value) {
+  return `R ${Number(value || 0).toLocaleString('en-ZA')}`;
+}
+
+function setProductMessage(text, type) {
+  const messageBox = document.getElementById('product-message');
+  if (!messageBox) {
+    return;
+  }
+
+  messageBox.textContent = text;
+  messageBox.className = `message ${type}`;
+}
+
+function validateProductForm() {
+  const nameInput = document.getElementById('name');
+  const priceInput = document.getElementById('price');
+  const addButton = document.getElementById('add-product-btn');
+
+  if (!nameInput || !priceInput || !addButton) {
+    return;
+  }
+
+  const valid = nameInput.value.trim().length > 0 && Number(priceInput.value) > 0;
+  addButton.disabled = !valid;
+}
+
+function addProduct() {
+  const nameInput = document.getElementById('name');
+  const priceInput = document.getElementById('price');
+  const imageInput = document.getElementById('image');
+  const categoryInput = document.getElementById('category');
+
+  const name = nameInput ? nameInput.value.trim() : '';
+  const price = Number(priceInput ? priceInput.value : 0);
+  const image = imageInput && imageInput.value.trim() ? imageInput.value.trim() : '../images/img1.jpeg';
+  const category = categoryInput && categoryInput.value
+    ? categoryInput.value.toLowerCase().replace(/\s+/g, '-')
+    : 'custom';
+
+  if (!name) {
+    setProductMessage('Please enter a product name.', 'error');
+    return;
+  }
+
+  if (!price || price <= 0) {
+    setProductMessage('Please enter a valid price.', 'error');
+    return;
+  }
+
+  syncProducts();
+
+  const newProduct = {
+    name,
+    price,
+    image,
+    category,
+    service: 'Custom request',
+    description: 'Added manually from the product form.'
+  };
+
+  products.push(newProduct);
+  window.products = products;
+  persistProducts();
+  loadProducts();
+  setProductMessage(`${name} added successfully.`, 'success');
+
+  if (nameInput) nameInput.value = '';
+  if (priceInput) priceInput.value = '';
+  if (imageInput) imageInput.value = '';
+  validateProductForm();
+}
+
+function renderFolderGallery() {
+  const gallery = document.getElementById('folder-gallery');
+  if (!gallery) {
+    return;
+  }
+
+  gallery.innerHTML = '';
+
+  folderGalleryImages.forEach(fileName => {
+    const card = document.createElement('div');
+    card.className = 'gallery-item';
+
+    const image = document.createElement('img');
+    image.src = `../images/${fileName}`;
+    image.alt = fileName.replace(/\.[^.]+$/, '').replace(/[-_]/g, ' ');
+
+    const caption = document.createElement('div');
+    caption.className = 'gallery-caption';
+    caption.textContent = fileName.replace(/\.[^.]+$/, '');
+
+    card.appendChild(image);
+    card.appendChild(caption);
+    gallery.appendChild(card);
+  });
 }
 
 function loadProducts() {
   const list = document.getElementById('product-list');
-  if (!list) return;
+  if (!list) {
+    return;
+  }
 
+  syncProducts();
   list.innerHTML = '';
 
-  const filtered = currentFilter === 'all'
+  const visibleProducts = currentFilter === 'all'
     ? products
-    : products.filter(p => p.category === currentFilter);
+    : products.filter(product => product.category === currentFilter);
 
-  const grouped = {};
+  if (!visibleProducts.length) {
+    list.innerHTML = '<p class="empty-state">No products available in this category yet.</p>';
+    return;
+  }
 
-  filtered.forEach(product => {
-    const key = product.service || 'Other Services';
-    if (!grouped[key]) grouped[key] = [];
-    grouped[key].push(product);
-  });
+  visibleProducts.forEach(product => {
+    const card = document.createElement('article');
+    card.className = 'product-card';
 
-  Object.keys(grouped).forEach(serviceName => {
-    const header = document.createElement('div');
-    header.className = 'service-category-header';
-    header.innerHTML = `<h3>${serviceName}</h3>`;
-    list.appendChild(header);
+    const image = document.createElement('img');
+    image.src = product.image;
+    image.alt = product.name;
 
-    const grid = document.createElement('div');
-    grid.className = 'service-products-grid';
+    const body = document.createElement('div');
+    body.className = 'product-body';
 
-    grouped[serviceName].forEach(p => {
-      const div = document.createElement('div');
-      div.className = 'product';
+    const meta = document.createElement('div');
+    meta.className = 'product-meta';
 
-      const img = document.createElement('img');
-      img.src = p.image;
-      img.alt = p.name;
-      img.onclick = () => openImageModal(p.image, p.name);
+    const title = document.createElement('h3');
+    title.textContent = product.name;
 
-      const h4 = document.createElement('h4');
-      h4.textContent = p.name;
+    const tag = document.createElement('span');
+    tag.textContent = product.service || 'Premium fit';
 
-      const price = document.createElement('p');
-      price.textContent = `R ${p.price.toFixed(2)}`;
+    meta.appendChild(title);
+    meta.appendChild(tag);
 
-      const btn = document.createElement('button');
-      btn.textContent = 'Add to Cart';
-      btn.onclick = () => addToCart(p.name, p.price, p.service);
+    const description = document.createElement('p');
+    description.textContent = product.description || 'Elegant storage made for modern spaces.';
 
-      div.appendChild(img);
-      div.appendChild(h4);
-      div.appendChild(price);
-      div.appendChild(btn);
+    const note = document.createElement('div');
+    note.className = 'product-note';
+    note.textContent = 'Available on request • Quote supplied after selection';
 
-      grid.appendChild(div);
+    const actions = document.createElement('div');
+    actions.className = 'product-actions';
+
+    const addButton = document.createElement('button');
+    addButton.type = 'button';
+    addButton.textContent = 'Select for Quote';
+    addButton.addEventListener('click', () => {
+      if (typeof addToCart === 'function') {
+        const added = addToCart(product.name, Number(product.price), product.service || 'Premium installation');
+        if (added) {
+          addButton.textContent = 'Added to Quote ✓';
+          addButton.classList.add('selected');
+        }
+      }
     });
 
-    list.appendChild(grid);
+    const askButton = document.createElement('button');
+    askButton.type = 'button';
+    askButton.textContent = 'Ask a Question';
+    askButton.addEventListener('click', () => {
+      window.location.href = 'contact.html';
+    });
+
+    actions.appendChild(addButton);
+    actions.appendChild(askButton);
+
+    body.appendChild(meta);
+    body.appendChild(description);
+    body.appendChild(note);
+    body.appendChild(actions);
+
+    card.appendChild(image);
+    card.appendChild(body);
+    list.appendChild(card);
   });
 }
 
-function openImageModal(src, name) {
-  const modal = document.getElementById('image-modal');
-  const modalImg = document.getElementById('modal-image');
-  modalImg.src = src;
-  modalImg.alt = name;
-  modal.classList.add('show');
-}
+function setupFilters() {
+  document.querySelectorAll('.filter-btn').forEach(button => {
+    if (button.dataset.bound === 'true') {
+      return;
+    }
 
-function closeImageModal() {
-  document.getElementById('image-modal').classList.remove('show');
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  loadProducts();
-
-  document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', e => {
-      document.querySelectorAll('.filter-btn')
-        .forEach(b => b.classList.remove('active'));
-      e.target.classList.add('active');
-      currentFilter = e.target.dataset.category;
+    button.dataset.bound = 'true';
+    button.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(item => item.classList.remove('active'));
+      button.classList.add('active');
+      currentFilter = button.dataset.category || 'all';
       loadProducts();
     });
   });
+}
 
-  document.querySelector('.modal-close')
-    .addEventListener('click', closeImageModal);
-});
+function setupProductForm() {
+  ['name', 'price'].forEach(id => {
+    const input = document.getElementById(id);
+    if (!input || input.dataset.bound === 'true') {
+      return;
+    }
+
+    input.dataset.bound = 'true';
+    input.addEventListener('input', validateProductForm);
+  });
+
+  const addButton = document.getElementById('add-product-btn');
+  if (addButton && addButton.dataset.bound !== 'true') {
+    addButton.dataset.bound = 'true';
+    addButton.addEventListener('click', addProduct);
+  }
+
+  validateProductForm();
+}
+
+function initializeProductsPage() {
+  if (localStorage.getItem('products') === null && (!Array.isArray(window.products) || window.products.length === 0)) {
+    window.products = defaultProducts.map(product => ({ ...product }));
+    syncProducts();
+    persistProducts();
+  }
+
+  renderFolderGallery();
+  setupFilters();
+  setupProductForm();
+  loadProducts();
+}
+
+window.addProduct = addProduct;
+window.loadProducts = loadProducts;
+
+initializeProductsPage();
+document.addEventListener('DOMContentLoaded', initializeProductsPage);
