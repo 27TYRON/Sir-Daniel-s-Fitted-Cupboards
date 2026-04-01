@@ -31,7 +31,7 @@ const folderGalleryImages = [
 const defaultProducts = [
   {
     name: 'Signature Wardrobe Package',
-    price: 6800,
+    
     image: '../images/img8.jpeg',
     category: 'wardrobes',
     service: 'Bedroom storage',
@@ -39,7 +39,7 @@ const defaultProducts = [
   },
   {
     name: 'Walk-In Closet Upgrade',
-    price: 9200,
+    
     image: '../images/img15.jpeg',
     category: 'wardrobes',
     service: 'Luxury organisation',
@@ -47,7 +47,7 @@ const defaultProducts = [
   },
   {
     name: 'Executive Kitchen Unit',
-    price: 12500,
+    
     image: '../images/img7.jpeg',
     category: 'kitchens',
     service: 'Kitchen cabinetry',
@@ -55,7 +55,7 @@ const defaultProducts = [
   },
   {
     name: 'Compact Kitchen Refresh',
-    price: 8500,
+    
     image: '../images/img11.jpeg',
     category: 'kitchens',
     service: 'Budget-friendly upgrade',
@@ -63,7 +63,7 @@ const defaultProducts = [
   },
   {
     name: 'TV Wall and Shelving Set',
-    price: 5600,
+   
     image: '../images/img23.jpeg',
     category: 'living',
     service: 'Living room feature',
@@ -71,7 +71,7 @@ const defaultProducts = [
   },
   {
     name: 'Floating Vanity Cabinet',
-    price: 4300,
+   
     image: '../images/img10.jpeg',
     category: 'living',
     service: 'Bathroom storage',
@@ -79,7 +79,7 @@ const defaultProducts = [
   },
   {
     name: 'Ceiling and Finish Package',
-    price: 6100,
+   
     image: '../images/img12.jpeg',
     category: 'finishes',
     service: 'Interior finishing',
@@ -87,7 +87,7 @@ const defaultProducts = [
   },
   {
     name: 'Custom Shelving Solution',
-    price: 3900,
+   
     image: '../images/img9.jpeg',
     category: 'finishes',
     service: 'Display shelving',
@@ -196,6 +196,21 @@ function addProduct() {
   validateProductForm();
 }
 
+function formatImageLabel(fileName, index) {
+  const baseName = fileName.replace(/\.[^.]+$/, '').trim();
+
+  if (baseName.toLowerCase() === 'daniel') {
+    return 'Founder Showcase';
+  }
+
+  if (baseName.toLowerCase() === 'logo') {
+    return 'Sir Daniel Brand Style';
+  }
+
+  const number = baseName.replace(/img\s*/i, '').trim() || String(index + 1).padStart(2, '0');
+  return `Custom Design ${number}`;
+}
+
 function renderFolderGallery() {
   const gallery = document.getElementById('folder-gallery');
   if (!gallery) {
@@ -204,7 +219,7 @@ function renderFolderGallery() {
 
   gallery.innerHTML = '';
 
-  folderGalleryImages.forEach(fileName => {
+  folderGalleryImages.forEach((fileName, index) => {
     const card = document.createElement('div');
     card.className = 'gallery-item';
 
@@ -214,10 +229,30 @@ function renderFolderGallery() {
 
     const caption = document.createElement('div');
     caption.className = 'gallery-caption';
-    caption.textContent = fileName.replace(/\.[^.]+$/, '');
 
+    const title = document.createElement('strong');
+    title.textContent = formatImageLabel(fileName, index);
+
+    const hint = document.createElement('span');
+    hint.textContent = 'View this design and add it to cart if you like it.';
+
+    const action = document.createElement('button');
+    action.type = 'button';
+    action.className = 'gallery-add-btn';
+    action.textContent = 'Add to Cart';
+    action.addEventListener('click', () => {
+      if (typeof addToCart === 'function') {
+        const added = addToCart(formatImageLabel(fileName, index), 0, 'Gallery design selection');
+        action.textContent = added ? 'Added ✓' : 'Already in Cart';
+        action.classList.add('selected');
+      }
+    });
+
+    caption.appendChild(title);
+    caption.appendChild(hint);
     card.appendChild(image);
     card.appendChild(caption);
+    card.appendChild(action);
     gallery.appendChild(card);
   });
 }
@@ -275,12 +310,12 @@ function loadProducts() {
 
     const addButton = document.createElement('button');
     addButton.type = 'button';
-    addButton.textContent = 'Select for Quote';
+    addButton.textContent = 'Add to Cart';
     addButton.addEventListener('click', () => {
       if (typeof addToCart === 'function') {
         const added = addToCart(product.name, Number(product.price), product.service || 'Premium installation');
+        addButton.textContent = added ? 'Added to Cart ✓' : 'Already in Cart';
         if (added) {
-          addButton.textContent = 'Added to Quote ✓';
           addButton.classList.add('selected');
         }
       }
