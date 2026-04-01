@@ -1,5 +1,5 @@
 const folderGalleryImages = [
-  'daniel.jpeg',
+  
   'img1.jpeg',
   'img2.jpeg',
   'img3.jpeg',
