@@ -37,4 +37,33 @@ function sendMessage() {
   }
 }
 
+function sendEmail() {
+  const name = document.getElementById('name')?.value.trim() || '';
+  const email = document.getElementById('email')?.value.trim() || '';
+  const subject = document.getElementById('subject')?.value.trim() || 'Cupboard quote request';
+  const message = document.getElementById('message')?.value.trim() || '';
+  const date = document.getElementById('date')?.value || 'Not selected';
+  const time = document.getElementById('time')?.value || 'Not selected';
+
+  if (!name || !email || !message) {
+    updateContactResponse('Please complete your name, email, and project details first.', 'error');
+    return;
+  }
+
+  const enquiry = [
+    `Hello Sir Daniel, my name is ${name}.`,
+    `Email: ${email}`,
+    `Project: ${subject}`,
+    `Preferred date: ${date}`,
+    `Preferred time: ${time}`,
+    `Details: ${message}`
+  ].join('\n');
+
+  updateContactResponse('Your email enquiry is ready to send.', 'success');
+
+  const mailtoLink = `mailto:Danielndawana93@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(enquiry)}`;
+  window.location.href = mailtoLink;
+}
+
 window.sendMessage = sendMessage;
+window.sendEmail = sendEmail;

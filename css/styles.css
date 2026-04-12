@@ -253,13 +253,29 @@ select {
   background: rgba(255, 255, 255, 0.1);
 }
 
-.btn-dark {
-  background: var(--dark);
-  color: #fff;
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
 }
 
-.btn-dark:hover {
-  background: var(--dark-soft);
+.btn-outline:hover {
+  background: var(--surface-alt);
+}
+
+.button-group {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .button-group {
+    flex-direction: column;
+  }
+  .button-group .btn {
+    width: 100%;
+  }
 }
 
 .metric-row {

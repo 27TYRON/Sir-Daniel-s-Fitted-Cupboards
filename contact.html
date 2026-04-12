@@ -69,7 +69,10 @@
           </div>
 
           <div class="form-group full">
-            <button type="button" class="btn btn-primary" onclick="sendMessage()">Send via WhatsApp</button>
+            <div class="button-group">
+              <button type="button" class="btn btn-primary" onclick="sendMessage()">Send via WhatsApp</button>
+              <button type="button" class="btn btn-outline" onclick="sendEmail()">Send via Email</button>
+            </div>
             <p id="contact-response" class="message" aria-live="polite"></p>
           </div>
         </form>
